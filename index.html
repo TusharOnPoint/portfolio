@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tushar Das — Academic Portfolio</title>
+    <meta name="description"
+        content="Tushar Das — Software Engineering student (IICT, SUST). Academics, problem solving (Codeforces & LeetCode), projects, and campus leadership." />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <canvas id="particles" aria-hidden="true"></canvas>
+
+    <nav id="navbar" role="navigation" aria-label="Main">
+        <div class="nav-container">
+            <a class="logo" href="#home"><t style="color: aqua;">Tushar</t>Das</a>
+            <button id="mobile-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul id="nav-links" class="nav-links" role="menubar">
+                <li role="none"><a class="nav-link active" href="#home" role="menuitem" aria-current="page">Home</a></li>
+                <li role="none"><a class="nav-link" href="#about" role="menuitem">About</a></li>
+                <li role="none"><a class="nav-link" href="#academics" role="menuitem">Academics</a></li>
+                <li role="none"><a class="nav-link" href="#skills" role="menuitem">Skills</a></li>
+                <li role="none"><a class="nav-link" href="#projects" role="menuitem">Projects</a></li>
+                <li role="none"><a class="nav-link" href="#problems" role="menuitem">Problem Solving</a></li>
+                <li role="none"><a class="nav-link" href="#contact" role="menuitem">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="section home-section" tabindex="-1">
+            <div class="container home-grid">
+                <div class="text-content">
+                    <h1>Tushar Das</h1>
+                    <div class="typewriter" aria-live="polite">
+                        <span id="typewriter" class="typewriter-text"></span>
+                    </div>
+                    <p class="home-description">
+                        Third-year Software Engineering student at Shahjalal University of Science & Technology (IICT),
+                        with strong interests in algorithmic problem-solving, software design, and full-stack
+                        development. I contribute to peer learning, mentor juniors, and organize events.
+                    </p>
+                    <div class="cta-buttons">
+                        <a class="btn btn-primary" href="#academics">Academic Profile</a>
+                        <a class="btn btn-secondary" href="#projects">Projects</a>
+                        <a class="btn btn-ghost" id="download-cv" href="Tushar_Das_CV.pdf"
+                            download="Tushar_Das_CV.pdf">Download CV</a>
+                    </div>
+                </div>
+                <div class="profile-image" aria-hidden="false">
+                    <img class="profile-img" src="profile.jpg" alt="Portrait of Tushar Das" />
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section" tabindex="-1">
+            <div class="container">
+                <div class="section-header">
+                    <h2>About Me</h2>
+                    <p>Student-first portfolio — academics, problem solving, clubs and mentorship.</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-left">
+                        <h3>Quick intro</h3>
+                        <p>
+                            I'm <strong>Tushar Das</strong>, a Software Engineering undergraduate at SUST (IICT).
+                            I focus on mastering fundamentals—algorithms, systems, and building reliable software
+                            prototypes.
+                            I enjoy turning course ideas into practical projects and supporting classmates through group
+                            learning.
+                        </p>
+                        <h4>Problem-solving focus</h4>
+                        <p>
+                            I consistently engage in breaking down complex problems into manageable components,
+                            carefully analyzing algorithmic complexity to ensure efficiency,
+                            and developing clear, maintainable code with thorough testing to guarantee correctness and
+                            reliability.
+                        </p>
+                        <h4>Soft skills</h4>
+                        <ul class="soft-skills">
+                            <li>Peer mentorship & teaching</li>
+                            <li>Collaboration & leadership</li>
+                            <li>Analytical thinking & debugging</li>
+                            <li>Clear technical writing & presentations</li>
+                        </ul>
+                    </div>
+                    <aside class="about-right" aria-label="Campus Positions">
+                        <h3 style="margin-bottom: 10px;">Clubs</h3>
+                        <div class="role-card">
+                            <strong>Sports Secretary — SWE Society</strong>
+                            <div class="role-details">Coordinated sports events and tournaments; promoted active
+                                participation among members and managed logistics.</div>
+                        </div>
+                        <div class="role-card">
+                            <strong>Assistant IT Secretary — Mymensingh Student Association</strong>
+                            <div class="role-details">Provided IT support for student activities; managed communication
+                                channels and digital resources.</div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section id="academics" class="section" tabindex="-1">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Academics & Coursework</h2>
+                    <p>Selected coursework, placeholders for grades, and academic activities.</p>
+                </div>
+                <div class="academics-grid">
+                    <div class="acad-main">
+                        <h3>Selected Coursework</h3>
+                        <div id="courses-list" class="courses-section" aria-live="polite"></div>
+                    </div>
+                    <aside class="acad-side">
+                        <div class="quick-facts info-card" id="contact-info">
+                            <h3>Quick Facts</h3>
+                            <ul>
+                                <li><strong>Degree:</strong> B.Sc. Software Engineering (in progress)</li>
+                                <li><strong>Year & Semester:</strong>3rd Year - 1st Semester</li>
+                                <li><strong>CGPA:</strong> — <b style="color: chartreuse;">3.78</b> (62.5 credits)</li>
+                                <li><strong>Fields:</strong> Software Engineering, Algorithms, Systems, AI</li>
+                                <li><strong>Competitions:</strong> ICPC-style & local hackathons</li>
+                            </ul>
+                        </div>
+                        <div class="academic-activities info-card">
+                            <h3>Activities</h3>
+                            <ul>
+                                <li>Peer tutoring</li>
+                                <li>Study group facilitator</li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section" tabindex="-1">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Skills — Languages, Frameworks & Tools</h2>
+                    <p>Languages first, then frameworks, tools and creative skills.</p>
+                </div>
+                <div id="skills-grid" class="skills-grid"></div>
+            </div>
+        </section>
+
+        <section id="projects" class="section" tabindex="-1">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Projects</h2>
+                    <p>Coursework and research prototypes — academic focus.</p>
+                </div>
+                <div id="projects-grid" class="projects-grid" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section id="problems" class="section" tabindex="-1">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Problem Solving</h2>
+                    <p>Competitive programming practice and profiles.</p>
+                </div>
+                <div class="problems-grid">
+                    <div class="problem-card">
+                        <h3>Codeforces</h3>
+                        <p>Handle: <strong id="cf-handle">tushar_cf (placeholder)</strong></p>
+                        <p>Rating: <strong id="cf-rating">—</strong></p>
+                        <a id="cf-link" class="project-link" href="#" target="_blank" rel="noopener">View Profile</a>
+                    </div>
+                    <div class="problem-card">
+                        <h3>LeetCode</h3>
+                        <p>Handle: <strong id="lc-handle">tushar_lc (placeholder)</strong></p>
+                        <p>Solved: <strong id="lc-solved">—</strong></p>
+                        <a id="lc-link" class="project-link" href="#" target="_blank" rel="noopener">View Profile</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section" tabindex="-1">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contact</h2>
+                    <p>Questions or collaboration for coursework/research? Reach out.</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-form">
+                        <h3 style="color:var(--accent)">Send me a message</h3>
+                        <form id="contact-form" aria-label="Send a message to Tushar">
+                            <div class="form-row">
+                                <div class="form-group"><label for="name">Name</label><input id="name" name="name"
+                                        required autocomplete="name" /></div>
+                                <div class="form-group"><label for="email">Email</label><input id="email" type="email"
+                                        name="email" required autocomplete="email" /></div>
+                            </div>
+                            <div class="form-group"><label for="subject">Subject</label><input id="subject"
+                                    name="subject" /></div>
+                            <div class="form-group"><label for="message">Message</label><textarea id="message"
+                                    name="message" rows="6" required></textarea></div>
+                            <div style="display:flex; gap:0.6rem;">
+                                <button class="btn btn-primary" type="submit">Send Message</button>
+                                <button class="btn btn-secondary" id="clear-form" type="button">Clear</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Contact Info</h3>
+                        <div class="contact-item"><i>📧</i>
+                            <div><strong>Email</strong><br><a
+                                    href="mailto:2021831003@student.sust.edu">2021831003@student.sust.edu</a></div>
+                        </div>
+                        <div class="contact-item"><i>📍</i>
+                            <div><strong>Location</strong><br>Bijoy 24 Hall, SUST, Sylhet, Bangladesh</div>
+                        </div>
+                        <div class="contact-item"><i>💼</i>
+                            <div><strong>LinkedIn</strong><br><a href="https://linkedin.com/in/tushar-das-2994a1268"
+                                    target="_blank" rel="noopener">linkedin.com/in/tushar-das</a></div>
+                        </div>
+                        <div class="contact-item"><i>🐙</i>
+                            <div><strong>GitHub</strong><br><a href="https://github.com/TusharOnPoint" target="_blank"
+                                    rel="noopener">github.com/TusharOnPoint</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <div class="container"><small>© <span id="current-year"></span> Tushar Das — Academic Portfolio</small></div>
+        </footer>
+    </main>
+
+    <div id="project-modal" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" aria-label="Close">✕</button>
+            <h3 id="modal-title"></h3>
+            <p id="modal-body" style="margin: 5px 3px"></p>
+            <div id="modal-tech" class="modal-tech"></div>
+            <div class="modal-actions" style="margin-top: 0.8rem; margin-bottom: 3px;">
+                <a id="modal-link" class="project-link" href="#" target="_blank" rel="noopener">View Repo / Notes</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="backgroundAnimation.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

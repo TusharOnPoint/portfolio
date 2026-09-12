@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'Algorithm Enthusiast',
         'Full-Stack Developer',
         'Problem Solver',
-        'Peer Mentor'
+        //'Peer Mentor',
+        'AI Enthusiast'
     ];
     if (typeEl) {
         let ti = 0, ci = 0, deleting = false;
@@ -37,36 +38,52 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Structured Programming Language', status: 'Grade: A+', desc: 'Control structures, functions, modular design, debugging.' },
         { name: 'Discrete Mathematics', status: 'Grade: A+', desc: 'Logic, set theory, combinatorics, graph theory.' },
         { name: 'Software Requirement Engineering', status: 'Grade: A+', desc: 'Requirement gathering, analysis, specification, validation.' },
-        { name: 'Algorithm Design and Analysis', status: 'Pending', desc: 'Design paradigms, complexity, approximation algorithms.' },
-        { name: 'Operating System', status: 'Pending', desc: 'Concurrency, scheduling, memory and process management.' },
-        { name: 'Database Management System', status: 'Ongoing', desc: 'Indexing, transactions, query optimization.' },
-        { name: 'Web Technologies', status: 'Ongoing', desc: 'HTML, CSS, JavaScript, frontend and backend basics.' },
-        { name: 'Artificial Intelligence (AI)', status: 'Ongoing', desc: 'Search algorithms, knowledge representation, problem solving.' },
-        { name: 'Design Patterns', status: 'Ongoing', desc: 'Common software design patterns and best practices.' }
+        { name: 'Algorithm Design and Analysis', status: 'Grade: A+', desc: 'Design paradigms, complexity, approximation algorithms.' },
+        { name: 'Operating System', status: 'Grade: A-', desc: 'Concurrency, scheduling, memory and process management.' },
+        { name: 'Database Management System', status: 'Grade: A+', desc: 'Indexing, transactions, query optimization.' },
+        { name: 'Web Technologies', status: 'Grade: A+', desc: 'HTML, CSS, JavaScript, frontend and backend basics.' },
+        { name: 'Artificial Intelligence (AI)', status: 'Grade: A+', desc: 'Search algorithms, knowledge representation, problem solving.' },
+        { name: 'Design Patterns', status: 'Grade: A+', desc: 'Common software design patterns and best practices.' }
     ];
 
     const SKILLS = {
         Languages: [
             { name: 'C', pct: 80 },
             { name: 'C++', pct: 85 },
-            { name: 'Java', pct: 80 },
-            { name: 'JavaScript', pct: 78 },
-            { name: 'Python', pct: 60 },
+            { name: 'Java', pct: 85 },
+            { name: 'JavaScript', pct: 82 },
+            { name: 'Python', pct: 75 },
             { name: 'HTML & CSS', pct: 75 }
         ],
         Frameworks: [
             { name: 'Flutter', pct: 82 },
             { name: 'React', pct: 30 },
-            { name: 'Spring Boot', pct: 55 }
+            { name: 'Spring Boot', pct: 75 }
         ],
         Tools: [
-            { name: 'Git', pct: 75 },
+            { name: 'Git', pct: 82 },
             { name: 'GitHub', pct: 78 },
-            { name: 'Maven', pct: 35 }
+            { name: 'Maven', pct: 60 }
         ]
     };
 
     const PROJECTS = [
+        {
+            id: 'p-smcms',
+            title: 'SUST Medical Center Management System',
+            short: 'A web-based application for managing medical records, appointments and Prescription generation, Medicine Inventory Management and Dispensing, Employee Management at SUST.',
+            long: 'Developed a comprehensive web application for managing patient records, appointments, and medical history at the SUST Medical Center. Implemented a user-friendly interface with role-based access control, enabling efficient management of patient data, appointment scheduling, and prescription generation. Integrated a secure database for storing sensitive medical information and implemented features for medicine inventory management and employee administration.',
+            tech: ['Java', 'Spring Boot', 'MySQL'],
+            link: 'https://github.com/TusharOnPoint/SMCMS.git'
+        },
+        {
+            id: 'p-tms',
+            title: 'Profile Based Task Management System (Backend)',
+            short: 'A web-based application for managing tasks based on user profiles.',
+            long: 'Developed a task management system that allows users to create, assign, and track tasks based on their profiles and responsibilities. Implemented username-password authentication, email verification, and role-based access control, and a RESTful API with JWT authentication for seamless integration with frontend applications. The system supports task categorization, priority levels, and status tracking, enhancing productivity and collaboration among team members.',
+            tech: ['Spring Boot', 'Java', 'MySQL'],
+            link: 'https://github.com/TusharOnPoint/ProfileBasedTaskManager.git'
+        },
         {
             id: 'p-campusconnect',
             title: 'CampusConnect — Student Connectivity App',
@@ -75,13 +92,21 @@ document.addEventListener('DOMContentLoaded', () => {
             tech: ['Flutter', 'Firebase', 'Dart'],
             link: 'https://github.com/TusharOnPoint/SWE250Project-Campus-Connect.git'
         },
+        // {
+        //     id: 'p-echoes',
+        //     title: 'Echoes of Adventure — 2D Java Platformer Game',
+        //     short: 'Platformer game built using LibGDX and Tiled maps.',
+        //     long: 'Created a side-scrolling platformer game with engaging level design, smooth character movement, and interactive obstacles using LibGDX and Tiled map editor. Implemented collision detection, collectibles, and progressive difficulty.',
+        //     tech: ['Java', 'LibGDX', 'Tiled'],
+        //     link: 'https://github.com/TusharOnPoint/Echoes-of-Adventure-A-java-game.git'
+        // },
         {
-            id: 'p-echoes',
-            title: 'Echoes of Adventure — 2D Java Platformer Game',
-            short: 'Platformer game built using LibGDX and Tiled maps.',
-            long: 'Created a side-scrolling platformer game with engaging level design, smooth character movement, and interactive obstacles using LibGDX and Tiled map editor. Implemented collision detection, collectibles, and progressive difficulty.',
-            tech: ['Java', 'LibGDX', 'Tiled'],
-            link: 'https://github.com/TusharOnPoint/Echoes-of-Adventure-A-java-game.git'
+            id: 'p-hms',
+            title: 'Residential Hall Management System',
+            short: 'A web-based application for managing residential hall operations.',
+            long: 'Developed a comprehensive residential hall management system that streamlines the process of managing student accommodations, maintenance requests, and facility bookings. The system includes user authentication, real-time inventory tracking, and reporting capabilities.',
+            tech: ['Spring Boot', 'Java', 'React','MySQL'],
+            link: 'https://github.com/TusharOnPoint/webproject.git'
         },
         {
             id: 'p-snake',

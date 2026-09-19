@@ -32,18 +32,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Data: courses, skills, projects
     const COURSES = [
-        { name: 'Software Engineering', status: 'Grade: A+', desc: 'Software development lifecycle, design patterns, testing, CI workflows.' },
+        { name: 'Structured Programming Language', status: 'Grade: A+', desc: 'Control structures, functions, modular design, debugging.' },
+        { name: 'Data Structures', status: 'Grade: A+', desc: 'Different data organization and storage techniques suitable for efficient data access and manipulation.' },
+        { name: 'Algorithm Design and Analysis', status: 'Grade: A+', desc: 'Design paradigms, complexity, approximation algorithms.' },
+        { name: 'Introduction to Software Engineering', status: 'Grade: A+', desc: 'Software development lifecycle, design patterns, testing, CI workflows.' },
         { name: 'Competitive Programming', status: 'Grade: B', desc: 'Problem solving, algorithms, data structures, contest strategies.' },
         { name: 'Object-Oriented Programming (OOP)', status: 'Grade: A+', desc: 'Classes, inheritance, polymorphism, design principles.' },
-        { name: 'Structured Programming Language', status: 'Grade: A+', desc: 'Control structures, functions, modular design, debugging.' },
         { name: 'Discrete Mathematics', status: 'Grade: A+', desc: 'Logic, set theory, combinatorics, graph theory.' },
         { name: 'Software Requirement Engineering', status: 'Grade: A+', desc: 'Requirement gathering, analysis, specification, validation.' },
-        { name: 'Algorithm Design and Analysis', status: 'Grade: A+', desc: 'Design paradigms, complexity, approximation algorithms.' },
         { name: 'Operating System', status: 'Grade: A-', desc: 'Concurrency, scheduling, memory and process management.' },
         { name: 'Database Management System', status: 'Grade: A+', desc: 'Indexing, transactions, query optimization.' },
         { name: 'Web Technologies', status: 'Grade: A+', desc: 'HTML, CSS, JavaScript, frontend and backend basics.' },
         { name: 'Artificial Intelligence (AI)', status: 'Grade: A+', desc: 'Search algorithms, knowledge representation, problem solving.' },
-        { name: 'Design Patterns', status: 'Grade: A+', desc: 'Common software design patterns and best practices.' }
+        { name: 'Design Patterns', status: 'Grade: A+', desc: 'Common software design patterns and best practices.' },
+        { name: 'Machine Learning', status: 'Grade: A', desc: 'Supervised and unsupervised learning, neural networks.' },
+        { name: 'Machine Learning Lab', status: 'Grade: A+', desc: 'Practical implementation of machine learning algorithms.' }
     ];
 
     const SKILLS = {
@@ -107,6 +110,15 @@ document.addEventListener('DOMContentLoaded', () => {
             long: 'Developed a comprehensive residential hall management system that streamlines the process of managing student accommodations, maintenance requests, and facility bookings. The system includes user authentication, real-time inventory tracking, and reporting capabilities.',
             tech: ['Spring Boot', 'Java', 'React','MySQL'],
             link: 'https://github.com/TusharOnPoint/webproject.git'
+        },
+        
+        {
+            id: 'p-nextstep',
+            title: 'NextStep — Career Development & Job Matching Platform',
+            short: 'A web application that helps users build career profiles, get AI-powered job recommendations, and access learning resources.',
+            long: 'Developed a comprehensive career development platform that allows users to create detailed career profiles, receive personalized job recommendations using AI matching, and access curated learning resources. The platform includes features for career roadmap generation, job comparison, and an AI-powered career assistant for guidance.',
+            tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Gemini API'],
+            link: 'https://github.com/TusharOnPoint/IIUC_hackathon.git',
         },
         {
             id: 'p-snake',
@@ -231,19 +243,33 @@ document.addEventListener('DOMContentLoaded', () => {
         updateActiveNav();
     });
 
-    // Smooth scrolling
-    $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
-        const href = a.getAttribute('href');
-        if (!href || href === '#') return;
-        e.preventDefault();
-        const t = document.querySelector(href);
-        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        const nav = $('#nav-links');
-        if (nav && nav.classList.contains('show')) {
-            nav.classList.remove('show');
-            $('#mobile-toggle').setAttribute('aria-expanded', 'false');
-        }
-    }));
+    // Smooth scrolling for in-page links only
+    document.querySelectorAll('a[href]').forEach(a => {
+        a.addEventListener('click', e => {
+            const href = a.getAttribute('href');
+            if (!href || !href.startsWith('#') || href === '#') return;
+            e.preventDefault();
+            const t = document.querySelector(href);
+            if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const nav = $('#nav-links');
+            if (nav && nav.classList.contains('show')) {
+                nav.classList.remove('show');
+                $('#mobile-toggle').setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+
+    // External profile links should always open in a new tab
+    ['#cf-link', '#lc-link'].forEach(selector => {
+        const link = document.querySelector(selector);
+        if (!link) return;
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const href = link.getAttribute('href');
+            if (!href) return;
+            window.open(href, '_blank', 'noopener,noreferrer');
+        });
+    });
 
     // Mobile nav toggle
     $('#mobile-toggle') && $('#mobile-toggle').addEventListener('click', () => {
@@ -317,8 +343,30 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', e => {
             e.preventDefault();
-            const data = Object.fromEntries(new FormData(contactForm).entries());
-            alert(`Thanks ${data.name || 'there'}! Message received (demo).`);
+
+            const formData = new FormData(contactForm);
+            const name = (formData.get('name') || '').toString().trim();
+            const email = (formData.get('email') || '').toString().trim();
+            const customSubject = (formData.get('subject') || '').toString().trim();
+            const message = (formData.get('message') || '').toString().trim();
+            const recipient = '2021831003@student.sust.edu';
+
+            const subject = customSubject || `Portfolio inquiry from ${name || 'Visitor'}`;
+            const mailBody = [
+                `Hello Tushar,`,
+                '',
+                `My name is ${name || 'Visitor'}.`,
+                `My email is ${email || 'not provided'}.`,
+                '',
+                'Message:',
+                message
+            ].join('\n');
+
+            const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
+            const newTab = window.open(gmailLink, '_blank');
+            if (!newTab) {
+                window.location.href = gmailLink;
+            }
             contactForm.reset();
         });
         $('#clear-form') && $('#clear-form').addEventListener('click', () => contactForm.reset());
